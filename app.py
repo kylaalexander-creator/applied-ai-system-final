@@ -116,6 +116,12 @@ if submit:
                 f"You won! The secret was {st.session_state.secret}. "
                 f"Final score: {st.session_state.score}"
             )
+            # New summary section
+            st.subheader("Game Summary")
+            st.write(f"**Difficulty:** {difficulty}")
+            st.write(f"**Attempts Used:** {st.session_state.attempts}")
+            st.write(f"**Final Score:** {st.session_state.score}")
+            st.write(f"**Guess History:** {', '.join(map(str, st.session_state.history))}")
         else:
             st.session_state.attempts += 1
             if st.session_state.attempts > attempt_limit:
