@@ -1,4 +1,4 @@
-def get_range_for_difficulty(difficulty):
+def get_range_for_difficulty(difficulty): #FIX: Refactored logic into logic_utils.py using Copilot Agent mode
     if difficulty == "Easy":
         return 1, 20
     if difficulty == "Normal":

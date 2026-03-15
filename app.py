@@ -86,8 +86,6 @@ if st.session_state.status != "playing":
     st.stop()
 
 if submit:
-    st.session_state.attempts += 1
-
     ok, guess_int, err = parse_guess(raw_guess)
 
     if not ok:
@@ -96,20 +94,19 @@ if submit:
     else:
         st.session_state.history.append(guess_int)
 
-        if st.session_state.attempts % 2 == 0:
-            secret = str(st.session_state.secret)
-        else:
-            secret = st.session_state.secret
+        secret = st.session_state.secret
 
         outcome, message = check_guess(guess_int, secret)
 
         if show_hint:
             st.warning(message)
 
+        attempt_number = st.session_state.attempts
+
         st.session_state.score = update_score(
             current_score=st.session_state.score,
             outcome=outcome,
-            attempt_number=st.session_state.attempts,
+            attempt_number=attempt_number,
         )
 
         if outcome == "Win":
@@ -120,7 +117,8 @@ if submit:
                 f"Final score: {st.session_state.score}"
             )
         else:
-            if st.session_state.attempts >= attempt_limit:
+            st.session_state.attempts += 1
+            if st.session_state.attempts > attempt_limit:
                 st.session_state.status = "lost"
                 st.error(
                     f"Out of attempts! "

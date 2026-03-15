@@ -19,6 +19,9 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 - Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
 
 ---
+1. I used copilot for this project.
+2. The suggestion for fixing the logic for the backwards was correct, and it caught both parts of the logic that would fix this. 
+3. I asked the agent to fix the logic so that app.y and logic_utils.py matched, after the agent changed it, the entire game gave an error. I ran the error in the copilot, and then it was able to fix the mistake.
 
 ## 3. Debugging and testing your fixes
 
@@ -28,12 +31,18 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 - Did AI help you design or understand any tests? How?
 
 ---
+I decided a bug was fixed by testing different test cases on my own. 
+
+I tried different levels, different guessing, and multiple rounds to make sure the game was working. 
+
+Ai helped me understand what to look for in the tests and what corrections to look from the bug fixes.
 
 ## 4. What did you learn about Streamlit and state?
 
 - How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
 
 ---
+I would describe it as updating the app if anything in the code changes. Any change to the code will result in the code rerunning from top to bottom, and all changes being shown. It also updates if the user presses a button, like if the game level was changed, it reruns all the code
 
 ## 5. Looking ahead: your developer habits
 
@@ -41,3 +50,6 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
   - This could be a testing habit, a prompting strategy, or a way you used Git.
 - What is one thing you would do differently next time you work with AI on a coding task?
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
+
+I want to take the habit of double checking the code that I let AI fix, or write. I also want to take the habit on inline ai chats, that way my prompts can be more specific. Next time, I would be a lot more specific when asking it to compare two different codes and make sure they match. I think copilot had an issue making sure the logic alligned across different pages. 
+It changed the way I think about AI by reminding me that AI can make mistakes, and can sometimes make the error worse, like when the entire game gave an error. 
