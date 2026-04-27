@@ -76,8 +76,11 @@ All in-game state (secret number, guesses, score, surge progress) lives in `st.s
 
 ![Game View](image-3.png)
 ![Prediciton from RAG tool](image-4.png)
+![Surge analyzing](image-6.png)
+![Surge play](image-7.png)
 
-
+## Demo Video
+<div style="position: relative; padding-bottom: 53.294289897510986%; height: 0;"><iframe src="https://www.loom.com/embed/5435328cfc2348ea845a1944e68fc972" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 ## Testing Summary
 
 What worked: 
@@ -97,6 +100,7 @@ What didn't work:
 
 ## Reflections and Ethics:
 
-   
+   Using an AI to engineer code requires attention to detail and constant testing. Certain errors are difficult to spot because on the surface things run smoothly. As an engineer, this project shows my attention to detial, and ability to use AI as a tool and not a simple shortcut.
+
 
 

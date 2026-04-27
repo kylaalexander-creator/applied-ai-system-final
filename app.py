@@ -180,7 +180,7 @@ def hint_card(text: str, tone: str = "neutral") -> None:
         "success": ("#F0FFF4", "#2E7D52", "#1A4D32"),
         "error":   ("#FFF0F0", "#C44040", "#6B1625"),
         "info":    ("#FFF5E8", "#9B6020", "#5C3A10"),
-        "surge":   ("#1A0508", "#C4405A", "#FFB0C0"),
+        "surge":   ("#FAFAFA", "#E8758A", "#FFD0DA"),
     }
     bg, border, text_color = colors.get(tone, colors["neutral"])
     st.markdown(
@@ -353,18 +353,18 @@ if st.session_state.surge_active:
             border:1px solid #C4405A;border-radius:6px;
             padding:16px 20px;margin:8px 0 16px 0;
         ">
-          <p style="color:#FFB0C0;font-family:'Playfair Display',serif;font-size:1.1rem;
+          <div style="color:#FFFFFF;font-family:'Playfair Display',serif;font-size:1.1rem;
                     margin:0 0 4px 0;letter-spacing:1px;">
             ⚡ SKILL SURGE — Challenge {idx + 1} of 5
-          </p>
-          <p style="color:#FF8090;font-family:'Lora',Georgia,serif;font-size:1rem;
+          </div>
+          <div style="color:#FFFFFF;font-family:'Lora',Georgia,serif;font-size:1rem;
                     font-weight:bold;margin:0 0 4px 0;">
             {game_cfg['challenge_name']}
-          </p>
-          <p style="color:#E8C0C8;font-family:'Lora',Georgia,serif;font-size:0.85rem;
+          </div>
+          <div style="color:#FFFFFF;font-family:'Lora',Georgia,serif;font-size:0.85rem;
                     font-style:italic;margin:0;">
             {game_cfg['taunt']}
-          </p>
+          </div>
         </div>""",
         unsafe_allow_html=True,
     )
