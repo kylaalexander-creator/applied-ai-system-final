@@ -1,11 +1,31 @@
-def get_range_for_difficulty(difficulty): #FIX: Refactored logic into logic_utils.py using Copilot Agent mode
-    if difficulty == "Easy":
-        return 1, 20
-    if difficulty == "Normal":
-        return 1, 50
-    if difficulty == "Hard":
-        return 1, 100
-    raise ValueError(f"Unexpected difficulty: {difficulty}")
+LEVEL_CONFIG = {
+    "Level 1":  (1, 10,   10),
+    "Level 2":  (1, 20,    9),
+    "Level 3":  (1, 35,    8),
+    "Level 4":  (1, 50,    8),
+    "Level 5":  (1, 75,    7),
+    "Level 6":  (1, 100,   7),
+    "Level 7":  (1, 200,   6),
+    "Level 8":  (1, 350,   6),
+    "Level 9":  (1, 500,   5),
+    "Level 10": (1, 1000,  5),
+}
+
+LEVELS = list(LEVEL_CONFIG.keys())
+
+
+def get_range_for_difficulty(difficulty):
+    if difficulty not in LEVEL_CONFIG:
+        raise ValueError(f"Unexpected difficulty: {difficulty}")
+    low, high, _ = LEVEL_CONFIG[difficulty]
+    return low, high
+
+
+def get_attempt_limit(difficulty):
+    if difficulty not in LEVEL_CONFIG:
+        raise ValueError(f"Unexpected difficulty: {difficulty}")
+    _, _, attempts = LEVEL_CONFIG[difficulty]
+    return attempts
 
 
 def parse_guess(raw_guess):

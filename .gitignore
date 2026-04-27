@@ -17,6 +17,9 @@ pip-wheel-metadata/
 .env
 .env.*
 *.env
+api key
+"api key"
+game_memory.txt
 
 # Streamlit
 .streamlit/secrets.toml
